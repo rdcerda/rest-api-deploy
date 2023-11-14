@@ -1,0 +1,36 @@
+@urlBase = http://localhost:3000
+
+### obtener todas las peliculas
+GET {{urlBase}}/movies
+
+### obtener peliculas por id
+GET {{urlBase}}/movies/b6e03689-cccd-478e-8565-d92f40813b13
+
+### obtener peliculas con filtro
+GET {{urlBase}}/movies?genre=crime
+
+### Crear una película con POST
+POST {{urlBase}}/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users",
+  "title": "The Godfather",
+  "year": 1975,
+  "director": "Francis Ford Coppola",
+  "duration": 175,
+  "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+  "genre": [
+    "Crime",
+    "Drama"
+  ]
+}
+
+### Actualizar una pelicula
+PATCH  {{urlBase}}/movies/e5b53da0-8232-11ee-b26b-ef9f8f5d51db
+Content-Type: application/json
+
+{
+  "title": "The Godfather 2",
+  "duration": 1654
+}
